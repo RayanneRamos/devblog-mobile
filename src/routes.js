@@ -13,18 +13,41 @@ function Routes() {
       <Stack.Screen 
         name='Home'
         component={Home}
+        options={{
+          headerShown: false,
+        }}
       />
       <Stack.Screen 
         name='Detail'
         component={Detail}
+        options={{
+          title: 'Detalhes',
+          headerTintColor: '#fff',
+          headerStyle: {
+            backgroundColor: '#232630',
+          }
+        }}
       />
       <Stack.Screen 
         name='CategoryPosts'
         component={CategoryPosts}
+        options={{
+          headerTintColor: '#fff',
+          headerStyle: {
+            backgroundColor: '#232630',
+          }
+        }}
       />
       <Stack.Screen 
         name='Search'
         component={Search}
+        options={{
+          title: 'Procurando Algo?',
+          headerTintColor: '#fff',
+          headerStyle: {
+            backgroundColor: '#232630',
+          }
+        }}
       />
     </Stack.Navigator>
   );
