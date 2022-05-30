@@ -1,19 +1,21 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { Feather } from '@expo/vector-icons';
 
 function Home() {
 
   const navigation = useNavigation();
 
   return(
-    <View style={styles.container}>
-      <Text>Pagina Home</Text>
-      <Button 
-        title='Ir para detalhes'
-        onPress={() => navigation.navigate('Detail')}
-      />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.name}>DevBlog</Text>
+        <TouchableOpacity>
+          <Feather name='search' size={24} color='#fff' />
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   )
 }
 
@@ -22,7 +24,21 @@ export { Home };
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#232630',
+  },
+
+  header: {
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
+    marginHorizontal: 18,
+    marginTop: 18,
+    marginBottom: 24,
+  },
+
+  name: {
+    fontSize: 28,
+    color: '#fff',
+    fontWeight: 'bold',
   }
 });
