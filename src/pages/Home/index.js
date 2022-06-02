@@ -14,6 +14,7 @@ function Home() {
   const [ categories, setCategories ] = useState([]);
   const [ favoriteCategory, setFavoriteCategory ] = useState([]);
   const [ posts, setPosts ] = useState([]);
+  const [ loading, setLoading ] = useState(false);
   
   useEffect(() => {
     async function loadData() {
@@ -35,8 +36,10 @@ function Home() {
   }, []);
 
   async function getListPosts() {
+    setLoading(true);
     const response = await api.get('api/posts?populate=cover&sort=createdAt:desc');
     setPosts(response.data.data);
+    setLoading(false);
   }
 
   async function handleFavorite(id) {
@@ -87,6 +90,8 @@ function Home() {
           data={posts}
           keyExtractor={(item) => String(item.id)}
           renderItem={({ item }) => <PostItem data={item} />}
+          refreshing={loading}
+          onRefresh={() => getListPosts()}
         />
       </View>
     </SafeAreaView>
