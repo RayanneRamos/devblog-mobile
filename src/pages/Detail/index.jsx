@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useLayoutEffect } from 'react';
 import { Text, SafeAreaView, TouchableOpacity, Image, ScrollView, Share, Modal } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { api } from '../../services/api/api';
 import { Feather, Entypo } from '@expo/vector-icons';
+import * as Animatable from 'react-native-animatable';
 import { LinkWeb } from '../../components/LinkWeb';
 import { styles } from './styles';
-import * as Animatable from 'react-native-animatable';
+import { api } from '../../services/api/api';
 
 function Detail() {
 

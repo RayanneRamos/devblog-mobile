@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, SafeAreaView, TouchableOpacity, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
-import { api } from '../../services/api/api';
+import * as Animatable from 'react-native-animatable';
 import { CategoryItem } from '../../components/CategoryItem';
-import { getFavorite, setFavorite } from '../../services/favorite/favorite';
 import { FavoritePost } from '../../components/FavoritePost';
 import { PostItem } from '../../components/PostItem';
-import * as Animatable from 'react-native-animatable';
 import { styles } from './styles';
+import { api } from '../../services/api/api';
+import { getFavorite, setFavorite } from '../../services/favorite/favorite';
 
 const FlatListAnimated = Animatable.createAnimatableComponent(FlatList);
 
@@ -81,7 +81,7 @@ function Home() {
             <FlatListAnimated
               animation='fadeInLeft'
               delay={500}
-              style={{ marginTop: 50, maxHeight: 100, paddingStart: 18, }}
+              style={styles.listCategories}
               contentContainerStyle={{ paddingEnd: 18 }}
               data={favoriteCategory}
               horizontal={true}
@@ -95,7 +95,7 @@ function Home() {
         <FlatListAnimated
           animation='fadeIn' 
           delay={500}
-          style={{ flex: 1, paddingHorizontal: 18 }}
+          style={styles.listHighArticle}
           showsVerticalScrollIndicator={false}
           data={posts}
           keyExtractor={(item) => String(item.id)}

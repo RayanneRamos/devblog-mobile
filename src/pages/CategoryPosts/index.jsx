@@ -1,10 +1,10 @@
 import React, { useLayoutEffect, useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { api } from '../../services/api/api';
+import * as Animatable from 'react-native-animatable';
 import { PostItem } from '../../components/PostItem';
 import { styles } from './styles';
-import * as Animatable from 'react-native-animatable';
+import { api } from '../../services/api/api';
 
 const FlatListAnimated = Animatable.createAnimatableComponent(FlatList);
 
@@ -36,7 +36,7 @@ function CategoryPosts() {
     <View style={styles.container}>
       { posts.length === 0 && (
         <View style={styles.warningContainer}>
-          <Text style={styles.warning}>Essa categoria ainda não possui nenhum post.</Text>
+          <Animatable.Text animation='fadeInLeft' delay={100} style={styles.warning}>Essa categoria ainda não possui nenhum post.</Animatable.Text>
           <TouchableOpacity style={styles.backButton} onPress={handleBack}>
             <Text style={styles.textButton}>Encontrar posts</Text>
           </TouchableOpacity>

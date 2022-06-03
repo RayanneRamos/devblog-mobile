@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList, Keyboard } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import { api } from '../../services/api/api';
+import * as Animatable from 'react-native-animatable';
 import { PostItem } from '../../components/PostItem';
 import { styles } from './styles';
-import * as Animatable from 'react-native-animatable';
+import { api } from '../../services/api/api';
 
 const FlatListAnimated = Animatable.createAnimatableComponent(FlatList);
 
@@ -53,7 +53,7 @@ function Search() {
       <FlatListAnimated
         animation='fadeInDown'
         delay={500} 
-        style={{ flex: 1 }}
+        style={styles.searchArticle}
         showsVerticalScrollIndicator={false}
         data={posts}
         keyExtractor={(item) => String(item.id)}
