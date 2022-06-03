@@ -4,6 +4,9 @@ import { Feather } from '@expo/vector-icons';
 import { api } from '../../services/api/api';
 import { PostItem } from '../../components/PostItem';
 import { styles } from './styles';
+import * as Animatable from 'react-native-animatable';
+
+const FlatListAnimated = Animatable.createAnimatableComponent(FlatList);
 
 function Search() {
 
@@ -44,10 +47,12 @@ function Search() {
       </View>
       { empty && (
         <View>
-          <Text style={styles.emptyText}>Não encontramos nenhum post!</Text>
+          <Animatable.Text style={styles.emptyText} animation='fadeInDown' delay={200}>Não encontramos nenhum post!</Animatable.Text>
         </View>
       )}
-      <FlatList 
+      <FlatListAnimated
+        animation='fadeInDown'
+        delay={500} 
         style={{ flex: 1 }}
         showsVerticalScrollIndicator={false}
         data={posts}

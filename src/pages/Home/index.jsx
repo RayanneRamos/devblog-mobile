@@ -78,7 +78,9 @@ function Home() {
       <View style={styles.main}>
         {
           favoriteCategory.length !== 0 && (
-            <FlatList 
+            <FlatListAnimated
+              animation='fadeInLeft'
+              delay={500}
               style={{ marginTop: 50, maxHeight: 100, paddingStart: 18, }}
               contentContainerStyle={{ paddingEnd: 18 }}
               data={favoriteCategory}
@@ -90,7 +92,9 @@ function Home() {
           )
         }
         <Text style={ [styles.title, { marginTop: favoriteCategory.length > 0 ? 14 : 46 }] }>Conteúdos em alta</Text>      
-        <FlatList 
+        <FlatListAnimated
+          animation='fadeIn' 
+          delay={500}
           style={{ flex: 1, paddingHorizontal: 18 }}
           showsVerticalScrollIndicator={false}
           data={posts}

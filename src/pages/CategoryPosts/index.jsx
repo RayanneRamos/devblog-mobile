@@ -4,6 +4,9 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { api } from '../../services/api/api';
 import { PostItem } from '../../components/PostItem';
 import { styles } from './styles';
+import * as Animatable from 'react-native-animatable';
+
+const FlatListAnimated = Animatable.createAnimatableComponent(FlatList);
 
 function CategoryPosts() {
   const navigation = useNavigation();
@@ -39,7 +42,9 @@ function CategoryPosts() {
           </TouchableOpacity>
         </View>
       )}
-      <FlatList 
+      <FlatListAnimated
+        animation='fadeInDown'
+        delay={500}
         showsVerticalScrollIndicator={false}
         style={{ flex: 1 }}
         data={posts}

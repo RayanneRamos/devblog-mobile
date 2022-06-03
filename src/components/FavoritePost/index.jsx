@@ -1,8 +1,6 @@
-import { Text, TouchableOpacity, ImageBackground, Dimensions } from 'react-native';
+import { Text, TouchableOpacity, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { styles } from './styles';
-
-const { width: WIDTH } = Dimensions.get('window');
 
 function FavoritePost({ data }) {
 

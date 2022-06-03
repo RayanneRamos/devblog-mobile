@@ -5,6 +5,7 @@ import { api } from '../../services/api/api';
 import { Feather, Entypo } from '@expo/vector-icons';
 import { LinkWeb } from '../../components/LinkWeb';
 import { styles } from './styles';
+import * as Animatable from 'react-native-animatable';
 
 function Detail() {
 
@@ -67,7 +68,13 @@ function Detail() {
         style={styles.cover}
         source={{ uri: `http://192.168.0.5:1337${post?.attributes?.cover?.data?.attributes?.url}` }}
       />
-      <Text style={styles.title}>{post?.attributes?.title}</Text>
+      <Animatable.Text 
+        style={styles.title} 
+        animation='slideInLeft' 
+        delay={100}
+      >
+        {post?.attributes?.title}
+      </Animatable.Text>
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         <Text style={styles.description}>{post?.attributes?.description}</Text>
         {
