@@ -35,11 +35,22 @@ export const styles = StyleSheet.create({
     marginTop: -30,
   },
 
+  listCategories: {
+    marginTop: 50, 
+    maxHeight: 100, 
+    paddingStart: 18, 
+  },
+
   title: {
     fontSize: 21,
     paddingHorizontal: 18,
     marginBottom: 14,
     fontWeight: 'bold',
     color: '#162133',
+  },
+
+  listHighArticle: {
+    flex: 1, 
+    paddingHorizontal: 18
   },
 });

@@ -43,4 +43,8 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#000',
   },
+
+  searchArticle: {
+    flex: 1,
+  },
 });
