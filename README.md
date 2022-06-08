@@ -8,6 +8,10 @@
   <img src="https://img.shields.io/badge/stars-MIT-%23835afd" alt="Stars">
 </p>
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/43352880/172705486-f18a75f9-02f3-4e7f-9804-af7d105ac424.png" alt="imagem do devblog">
+</p>
+
 <br>
 
 ## 💻 Projeto
